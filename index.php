@@ -2,6 +2,7 @@
 require_once 'src/php/components/navbar.php';
 require_once 'src/php/components/card.php';
 require_once 'src/php/components/animal_card.php';
+require_once 'src/php/components/sectionText.php';
 ?>
 
 <!doctype html>
@@ -19,6 +20,7 @@ require_once 'src/php/components/animal_card.php';
     <?php navbar();?>
 
     <div class="container">
+        <?= sectionText('Serviços')?>
         <div class="row justify-content-center w-100 mb-5">
             <?= card("70,00", "56,00", "20", "2x R$ 23,00", "Ração para cachorros P")?>
             <?= card("70,00", "56,00", "20", "2x R$ 23,00", "Ração para cachorros P")?>
@@ -28,6 +30,7 @@ require_once 'src/php/components/animal_card.php';
     </div>
 
         <div class="container">
+            <?= sectionText('Sessões')?>
             <div class="row justify-content-center w-100 mb-5">
                 <?= animal_card("Gato")?>
                 <?= animal_card("Cachorro")?>
