@@ -2,6 +2,7 @@
 
 function animal_card($animalMark)
 {
+    $animalMark = strtolower($animalMark);
     $animalMark = ucfirst($animalMark);
     switch ($animalMark)
     {
