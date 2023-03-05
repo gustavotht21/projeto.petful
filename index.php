@@ -111,7 +111,7 @@ $connection = connection("laradock_mysql_1", "root", "root", "petful");
 </div>
 
 <footer>
-    <section style='background-color: #FFBF00; height: 23.25rem;' class='d-flex w-100 row justify-content-evenly me-0 ms-0 align-items-start p-3'>
+    <section style='background-color: #FFBF00;' class='d-flex w-100 row justify-content-evenly me-0 ms-0 align-items-start p-3'>
         <div class='col-auto mt-3'>
             <a class="text-decoration-none text-black" href=""><p class='fs-5 fw-bold'>Intitucional</p></a>
             <a class="text-decoration-none text-black" href=""><p class='fw-normal'>Sobre a petful</p></a>
@@ -147,7 +147,7 @@ $connection = connection("laradock_mysql_1", "root", "root", "petful");
             <a class="text-decoration-none text-black" href=""><p class='fw-normal'>Ouvidoria</p></a>
         </div>
     </section>
-    <section style='background-color: #10A19D; color: #FFF; height: 23.25rem' class='d-flex w-100 row justify-content-evenly me-0 ms-0 align-items-center p-3'>
+    <section style='background-color: #10A19D; color: #FFF;' class='d-flex w-100 row justify-content-evenly me-0 ms-0 align-items-center p-3'>
         <div class='d-flex justify-content-evenly'>
             <div class='col-auto'>
                 <p class="fs-4 fw-semibold">Redes sociais</p>
@@ -167,7 +167,7 @@ $connection = connection("laradock_mysql_1", "root", "root", "petful");
                 </div>
             </div>
         </div>
-        <p class='text-center' style='font-size: 0.75rem'>
+        <p class='text-center mt-5' style='font-size: 0.75rem'>
             petful - CNPJ 65.679.435/0001-50 - Endereço: Porto Velho - RO - CEP: 76822-142 <br>
             Copyright&copy 2023 petful — Todos os direitos reservados
         </p>
