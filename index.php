@@ -1,5 +1,6 @@
 <?php
 require_once 'src/php/components/navbar.php';
+require_once 'src/php/components/card.php';
 ?>
 
 <!doctype html>
@@ -15,5 +16,14 @@ require_once 'src/php/components/navbar.php';
 </head>
 <body>
     <?php navbar();?>
+
+    <div class="container">
+        <div class="row w-100 mb-5">
+            <?= card("70,00", "56,00", "20", "2x R$ 23,00", "Ração para cachorros P")?>
+            <?= card("70,00", "56,00", "20", "2x R$ 23,00", "Ração para cachorros P")?>
+            <?= card("70,00", "56,00", "20", "2x R$ 23,00", "Ração para cachorros P")?>
+            <?= card("70,00", "56,00", "20", "2x R$ 23,00", "Ração para cachorros P")?>
+        </div>
+    </div>
 </body>
 </html>
