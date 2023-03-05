@@ -1,6 +1,7 @@
 <?php
 require_once 'src/php/components/navbar.php';
 require_once 'src/php/components/card.php';
+require_once 'src/php/components/animal_card.php';
 ?>
 
 <!doctype html>
@@ -25,5 +26,16 @@ require_once 'src/php/components/card.php';
             <?= card("70,00", "56,00", "20", "2x R$ 23,00", "Ração para cachorros P")?>
         </div>
     </div>
+
+        <div class="container">
+            <div class="row w-100 mb-5">
+                <?= animal_card("Gato")?>
+                <?= animal_card("Cachorro")?>
+                <?= animal_card("Whiskas")?>
+                <?= animal_card("Pássaro")?>
+                <?= animal_card("PetClean")?>
+                <?= animal_card("Casa e jardim")?>
+            </div>
+        </div>
 </body>
 </html>
