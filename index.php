@@ -19,7 +19,7 @@ require_once 'src/php/components/animal_card.php';
     <?php navbar();?>
 
     <div class="container">
-        <div class="row w-100 mb-5">
+        <div class="row justify-content-center w-100 mb-5">
             <?= card("70,00", "56,00", "20", "2x R$ 23,00", "Ração para cachorros P")?>
             <?= card("70,00", "56,00", "20", "2x R$ 23,00", "Ração para cachorros P")?>
             <?= card("70,00", "56,00", "20", "2x R$ 23,00", "Ração para cachorros P")?>
@@ -28,7 +28,7 @@ require_once 'src/php/components/animal_card.php';
     </div>
 
         <div class="container">
-            <div class="row w-100 mb-5">
+            <div class="row justify-content-center w-100 mb-5">
                 <?= animal_card("Gato")?>
                 <?= animal_card("Cachorro")?>
                 <?= animal_card("Whiskas")?>

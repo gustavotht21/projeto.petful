@@ -43,7 +43,7 @@ function animal_card($animalMark)
     }
 
     return "
-        <a href='$animalMarkRedirect' class='text-decoration-none col'>
+        <a href='$animalMarkRedirect' class='text-decoration-none col-auto'>
             <div class='mt-3'>
                 <div class='shadow card border-1 border-light d-flex flex-col justify-content-center align-items-center' style='width: 12.5rem; height: 12.5rem'>
                     <img src='$animalMarkLink' style='width: 60px; height: 60px;' class='card-img-top' alt='...'>

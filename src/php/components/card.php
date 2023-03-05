@@ -3,7 +3,7 @@
 function card($oldPrice, $newPrice, $priceDescont, $alternativePrice, $serviceName)
 {
     return "
-    <div class='col-sm-12 col-lg-6 col-xl-3 mt-2'>
+    <div class='col-auto mt-2'>
         <div class='shadow card border-1 border-light' style='width: 18rem; height: 26rem'>
             <img src='https://cdn2.iconfinder.com/data/icons/tools-flat-v-1-free/129/saw-512.png' 
             style='width: 152px; align-self: center' 
