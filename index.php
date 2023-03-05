@@ -29,44 +29,44 @@ $connection = connection("laradock_mysql_1", "root", "root", "petful");
 <body>
 <?php navbar();?>
 
-    <div class="d-flex w-100 justify-content-center mt-5 mb-5">
-        <img src="https://petful.devborges.tech/public_html/Banner.jpg" alt="Banner promocional. Cupom de boas vindas: BENVINDO ">
-    </div>
+<div class="d-none d-xl-flex w-100 justify-content-center mt-5 mb-5 ms-0 me-0">
+    <img src="https://petful.devborges.tech/public_html/Banner.jpg" alt="Banner promocional. Cupom de boas vindas: BENVINDO ">
+</div>
 
-    <div class="row w-100 justify-content-evenly gap-2 w-100 mt-3 ms-0 me-0">
-        <a href="" class="d-flex align-items-center rounded col-auto text-decoration-none" style="background-color: #D9D9D9; width: 25rem; height: 6.25rem">
-            <img class="me-2" style="width: 45px; height: 45px" src="https://petful.devborges.tech/public_html/clock.svg" alt="">
-            <div class="ms-2 d-flex flex-column">
-                <span class="text-black">Receba em horas</span>
-                <span class="text-black text-decoration-underline">Confira</span>
-            </div>
-        </a>
-        <a href="" class="d-flex align-items-center rounded col-auto text-decoration-none" style="background-color: #D9D9D9; width: 25rem; height: 6.25rem">
-            <img class="me-2" style="width: 45px; height: 45px" src="https://petful.devborges.tech/public_html/truck.svg" alt="">
-            <div class="ms-2 d-flex flex-column">
-                <span class="text-black">Frete grátis Brasil</span>
-                <span class="text-black text-decoration-underline">Confira</span>
-            </div>
-        </a>
-        <a href="" class="d-flex align-items-center rounded col-auto text-decoration-none" style="background-color: #D9D9D9; width: 25rem; height: 6.25rem">
-            <img class="me-2" style="width: 45px; height: 45px" src="https://petful.devborges.tech/public_html/cards.svg" alt="">
-            <div class="ms-2 d-flex flex-column">
-                <span class="text-black">Até 10 vezes sem juros</span>
-                <span class="text-black text-decoration-underline">Confira</span>
-            </div>
-        </a>
-        <a href="" class="d-flex align-items-center rounded col-auto text-decoration-none" style="background-color: #D9D9D9; width: 25rem; height: 6.25rem">
-            <img class="me-2" style="width: 45px; height: 45px" src="https://petful.devborges.tech/public_html/store.svg" alt="">
-            <div class="ms-2 d-flex flex-column">
-                <span class="text-black">Retire e troque na loja</span>
-                <span class="text-black text-decoration-underline">Confira</span>
-            </div>
-        </a>
-    </div>
+<div class="row w-100 justify-content-evenly gap-2 w-100 mt-3 ms-0 me-0">
+    <a href="" class="d-flex align-items-center rounded col-auto text-decoration-none" style="background-color: #D9D9D9; width: 25rem; height: 6.25rem">
+        <img class="me-2" style="width: 45px; height: 45px" src="https://petful.devborges.tech/public_html/clock.svg" alt="">
+        <div class="ms-2 d-flex flex-column">
+            <span class="text-black">Receba em horas</span>
+            <span class="text-black text-decoration-underline">Confira</span>
+        </div>
+    </a>
+    <a href="" class="d-flex align-items-center rounded col-auto text-decoration-none" style="background-color: #D9D9D9; width: 25rem; height: 6.25rem">
+        <img class="me-2" style="width: 45px; height: 45px" src="https://petful.devborges.tech/public_html/truck.svg" alt="">
+        <div class="ms-2 d-flex flex-column">
+            <span class="text-black">Frete grátis Brasil</span>
+            <span class="text-black text-decoration-underline">Confira</span>
+        </div>
+    </a>
+    <a href="" class="d-flex align-items-center rounded col-auto text-decoration-none" style="background-color: #D9D9D9; width: 25rem; height: 6.25rem">
+        <img class="me-2" style="width: 45px; height: 45px" src="https://petful.devborges.tech/public_html/cards.svg" alt="">
+        <div class="ms-2 d-flex flex-column">
+            <span class="text-black">Até 10 vezes sem juros</span>
+            <span class="text-black text-decoration-underline">Confira</span>
+        </div>
+    </a>
+    <a href="" class="d-flex align-items-center rounded col-auto text-decoration-none" style="background-color: #D9D9D9; width: 25rem; height: 6.25rem">
+        <img class="me-2" style="width: 45px; height: 45px" src="https://petful.devborges.tech/public_html/store.svg" alt="">
+        <div class="ms-2 d-flex flex-column">
+            <span class="text-black">Retire e troque na loja</span>
+            <span class="text-black text-decoration-underline">Confira</span>
+        </div>
+    </a>
+</div>
 
-<div class="container">
+<div id="products">
     <?= sectionText('Produtos')?>
-    <div class="row justify-content-center w-100 mb-5">
+    <div class="row justify-content-center w-100 mb-5 ms-0 me-0">
         <?php
         $sqlSelect = "SELECT * FROM Product";
         $resultSelect = $connection->query($sqlSelect);
@@ -77,9 +77,9 @@ $connection = connection("laradock_mysql_1", "root", "root", "petful");
     </div>
 </div>
 
-<div class="container">
+<div id="services">
     <?= sectionText('Serviços')?>
-    <div class="row justify-content-center w-100 mb-5">
+    <div class="row justify-content-center w-100 mb-5 ms-0 me-0">
         <?php
         $sqlSelect = "SELECT * FROM Service";
         $resultSelect = $connection->query($sqlSelect);
@@ -90,15 +90,23 @@ $connection = connection("laradock_mysql_1", "root", "root", "petful");
     </div>
 </div>
 
-<div class="container">
+<div id="sections">
     <?= sectionText('Sessões')?>
-    <div class="row justify-content-center w-100 mb-5">
+    <div class="row justify-content-center w-100 mb-5 ms-0 me-0">
         <?= animal_card("Gato")?>
         <?= animal_card("Cachorro")?>
-        <?= animal_card("Whiskas")?>
         <?= animal_card("Pássaro")?>
-        <?= animal_card("PetClean")?>
+        <?= animal_card("Roedor")?>
         <?= animal_card("Casa e jardim")?>
+    </div>
+</div>
+
+<div id="marks">
+    <?= sectionText('Marcas')?>
+    <div class="row justify-content-center w-100 mb-5 ms-0 me-0">
+        <?= animal_card("Pedigree")?>
+        <?= animal_card("Whiskas")?>
+        <?= animal_card("PetClean")?>
     </div>
 </div>
 </body>
