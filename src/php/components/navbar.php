@@ -5,7 +5,9 @@ function navbar()
     echo "
     <nav class='navbar navbar-expand-lg' style='background-color: #FF7000'>
     <div class='container-fluid'>
-        <a class='navbar-brand text-white fw-bold' href='#'>petful</a>
+        <a class='navbar-brand text-white fw-bold' href='#'>
+            <img src='https://petful.devborges.tech/public_html/petful.svg' alt='logo'>
+        </a>
         <button class='navbar-toggler text-white border border-white' type='button' data-bs-toggle='offcanvas' data-bs-target='#offcanvasNavbar' aria-controls='offcanvasNavbar'>
             <span class='navbar-toggler-icon navbar-dark'></span>
         </button>

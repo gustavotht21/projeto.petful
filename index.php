@@ -4,7 +4,7 @@ require_once 'src/php/components/card.php';
 ?>
 
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
