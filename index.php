@@ -17,11 +17,52 @@ $connection = connection("laradock_mysql_1", "root", "root", "petful");
     <title>petful</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 <body>
 <?php navbar();?>
 
-<img src="https://replit.com/@GustavoBorges8/KhakiDarkturquoiseWorkplace#bird.svg" alt="">
+    <div class="d-flex w-100 justify-content-center mt-5 mb-5">
+        <img src="https://petful.devborges.tech/public_html/Banner.jpg" alt="Banner promocional. Cupom de boas vindas: BENVINDO ">
+    </div>
+
+    <div class="row w-100 justify-content-evenly gap-2 w-100 mt-3 ms-0 me-0">
+        <a href="" class="d-flex align-items-center rounded col-auto text-decoration-none" style="background-color: #D9D9D9; width: 25rem; height: 6.25rem">
+            <img class="me-2" style="width: 45px; height: 45px" src="https://petful.devborges.tech/public_html/clock.svg" alt="">
+            <div class="ms-2 d-flex flex-column">
+                <span class="text-black">Receba em horas</span>
+                <span class="text-black text-decoration-underline">Confira</span>
+            </div>
+        </a>
+        <a href="" class="d-flex align-items-center rounded col-auto text-decoration-none" style="background-color: #D9D9D9; width: 25rem; height: 6.25rem">
+            <img class="me-2" style="width: 45px; height: 45px" src="https://petful.devborges.tech/public_html/truck.svg" alt="">
+            <div class="ms-2 d-flex flex-column">
+                <span class="text-black">Frete grátis Brasil</span>
+                <span class="text-black text-decoration-underline">Confira</span>
+            </div>
+        </a>
+        <a href="" class="d-flex align-items-center rounded col-auto text-decoration-none" style="background-color: #D9D9D9; width: 25rem; height: 6.25rem">
+            <img class="me-2" style="width: 45px; height: 45px" src="https://petful.devborges.tech/public_html/cards.svg" alt="">
+            <div class="ms-2 d-flex flex-column">
+                <span class="text-black">Até 10 vezes sem juros</span>
+                <span class="text-black text-decoration-underline">Confira</span>
+            </div>
+        </a>
+        <a href="" class="d-flex align-items-center rounded col-auto text-decoration-none" style="background-color: #D9D9D9; width: 25rem; height: 6.25rem">
+            <img class="me-2" style="width: 45px; height: 45px" src="https://petful.devborges.tech/public_html/store.svg" alt="">
+            <div class="ms-2 d-flex flex-column">
+                <span class="text-black">Retire e troque na loja</span>
+                <span class="text-black text-decoration-underline">Confira</span>
+            </div>
+        </a>
+    </div>
 
 <div class="container">
     <?= sectionText('Produtos')?>
