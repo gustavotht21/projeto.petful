@@ -1,7 +1,8 @@
 <?php
-
+require_once 'routes.php';
 function navbar()
 {
+    $home = routes('home');
     echo "
     <nav class='navbar navbar-expand-lg' style='background-color: #FF7000'>
     <div class='container-fluid'>
@@ -23,7 +24,7 @@ function navbar()
             <div class='offcanvas-body' style='background-color: #FF7000'>
                 <ul class='navbar-nav justify-content-end flex-grow-1 pe-3'>
                     <li class='nav-item'>
-                        <a class='nav-link text-white fw-bold link' aria-current='page' href=''>Home</a>
+                        <a class='nav-link text-white fw-bold link' aria-current='page' href='$home'>Home</a>
                     </li>
                     <li class='nav-item'>
                         <a class='nav-link text-white fw-bold link' href='#products'>Produtos</a>
