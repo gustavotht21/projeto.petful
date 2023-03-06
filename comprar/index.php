@@ -1,11 +1,9 @@
 <?php
 require_once 'src/php/components/navbar.php';
-require_once 'src/php/components/card.php';
-require_once 'src/php/components/animal_card.php';
-require_once 'src/php/components/sectionText.php';
 require_once 'src/php/action/connection.php';
-$connection = connection();
+require_once 'routes.php';
 ?>
+
 
 <!doctype html>
 <html lang="pt-br">
@@ -29,88 +27,69 @@ $connection = connection();
 <body>
 <?php navbar();?>
 
-<div class="d-none d-xl-flex w-100 justify-content-center mt-5 mb-5 ms-0 me-0">
-    <img src="https://petful.devborges.tech/public_html/Banner.jpg" alt="Banner promocional. Cupom de boas vindas: BENVINDO ">
-</div>
+<?php
+$connection = connection();
+$id = intval(base64_decode($_GET['product']));
+$name = mysqli_escape_string($connection, $_GET['name']);
+$name = htmlspecialchars($name);
+$type = $_GET['pt'];
 
-<div class="row w-100 justify-content-evenly gap-2 w-100 mt-3 ms-0 me-0">
-    <a href="" class="d-flex align-items-center rounded col-auto text-decoration-none" style="background-color: #D9D9D9; width: 25rem; height: 6.25rem">
-        <img class="me-2" style="width: 45px; height: 45px" src="https://petful.devborges.tech/public_html/clock.svg" alt="">
-        <div class="ms-2 d-flex flex-column">
-            <span class="text-black">Receba em horas</span>
-            <span class="text-black text-decoration-underline">Confira</span>
-        </div>
+if ($type === 'Product') {
+    $sqlProduct = "SELECT * FROM Product WHERE id={$id} AND name='{$name}'";
+    $resultProduct = $connection->query($sqlProduct);
+    $res = $resultProduct->fetch_assoc();
+    $input = "
+    <div class='mb-3'>
+                <label for='qtd' class='form-label'>Quantidade</label>
+                <input value='1' type='number' name='qtd' min='1' class='form-control' id='qtd'>
+            </div>
+    ";
+
+} else {
+    $sqlService = "SELECT * FROM Service WHERE id={$id} AND name='{$name}'";
+    $resultService = $connection->query($sqlService);
+    $res = $resultService->fetch_assoc();
+    date_default_timezone_set('America/Porto_Velho');
+    $date = date('Y-m-d h:i', strtotime('+2 day'));
+    $input = "
+    <div class='mb-3'>
+                <label for='date' class='form-label'>Data</label>
+                <input value='$date' type='datetime-local' name='date' min='$date' class='form-control' id='date'>
+            </div>
+    ";
+}
+?>
+
+<div class="container mt-3">
+    <a href="<?= routes('home')?>">
+        <button class="btn rounded text-white fw-bold" style="background-color: #10A19D; width: 10rem; height: 3rem;">Voltar</button>
     </a>
-    <a href="" class="d-flex align-items-center rounded col-auto text-decoration-none" style="background-color: #D9D9D9; width: 25rem; height: 6.25rem">
-        <img class="me-2" style="width: 45px; height: 45px" src="https://petful.devborges.tech/public_html/truck.svg" alt="">
-        <div class="ms-2 d-flex flex-column">
-            <span class="text-black">Frete grátis Brasil</span>
-            <span class="text-black text-decoration-underline">Confira</span>
-        </div>
-    </a>
-    <a href="" class="d-flex align-items-center rounded col-auto text-decoration-none" style="background-color: #D9D9D9; width: 25rem; height: 6.25rem">
-        <img class="me-2" style="width: 45px; height: 45px" src="https://petful.devborges.tech/public_html/cards.svg" alt="">
-        <div class="ms-2 d-flex flex-column">
-            <span class="text-black">Até 10 vezes sem juros</span>
-            <span class="text-black text-decoration-underline">Confira</span>
-        </div>
-    </a>
-    <a href="" class="d-flex align-items-center rounded col-auto text-decoration-none" style="background-color: #D9D9D9; width: 25rem; height: 6.25rem">
-        <img class="me-2" style="width: 45px; height: 45px" src="https://petful.devborges.tech/public_html/store.svg" alt="">
-        <div class="ms-2 d-flex flex-column">
-            <span class="text-black">Retire e troque na loja</span>
-            <span class="text-black text-decoration-underline">Confira</span>
-        </div>
-    </a>
 </div>
 
-<div id="products">
-    <?= sectionText('Produtos')?>
-    <div class="row justify-content-center w-100 mb-5 ms-0 me-0">
-        <?php
-        $sqlSelect = "SELECT * FROM Product";
-        $resultSelect = $connection->query($sqlSelect);
+<main class="d-flex justify-content-center align-items-center gap-5 mt-5">
+    <section>
+        <img style="width: 10rem" src="https://cdn2.iconfinder.com/data/icons/tools-flat-v-1-free/129/saw-512.png" alt="">
+    </section>
+    <section>
+        <form action="#" class="m-5">
+            <p class="fw-bold"><?= $res['name']?></p>
+            <?= $input?>
 
-        while ($res = mysqli_fetch_assoc($resultSelect)) {
-            echo card("{$res['oldPrice']}", "{$res['price']}", "{$res['discount']}", "{$res['alternativePrice']}", "{$res['name']}", "{$res['id']}", "Product");
-        }?>
-    </div>
-</div>
+            <p class="text-decoration-line-through">R$ <?= $res['oldPrice']?></p>
+            <p class="fw-bold fs-5">R$ <?= $res['price']?></p>
+            <p><?= $res['alternativePrice']?></p>
+            <div class="d-flex align-items-center gap-3">
+                <button type="submit" class='btn rounded fw-bold f-4 d-flex justify-content-center align-items-center' style='background-color: #FFBF00; width: 24rem; height: 4rem'>Comprar</button>
+                <button class="btn text-white" style="background-color: #10A19D">
+                    <img style="width: 2rem; height: auto" src="https://petful.devborges.tech/public_html/plus-cart.svg" alt="">
+                </button>
+            </div>
+        </form>
+    </section>
+</main>
 
-<div id="services">
-    <?= sectionText('Serviços')?>
-    <div class="row justify-content-center w-100 mb-5 ms-0 me-0">
-        <?php
-        $sqlSelect = "SELECT * FROM Service";
-        $resultSelect = $connection->query($sqlSelect);
 
-        while ($res = mysqli_fetch_assoc($resultSelect)) {
-            echo card("{$res['oldPrice']}", "{$res['price']}", "{$res['discount']}", "{$res['alternativePrice']}", "{$res['name']}", "{$res['id']}", "Service");
-        }?>
-    </div>
-</div>
-
-<div id="sections">
-    <?= sectionText('Sessões')?>
-    <div class="row justify-content-center w-100 mb-5 ms-0 me-0">
-        <?= animal_card("Gato")?>
-        <?= animal_card("Cachorro")?>
-        <?= animal_card("Pássaro")?>
-        <?= animal_card("Roedor")?>
-        <?= animal_card("Casa e jardim")?>
-    </div>
-</div>
-
-<div id="marks">
-    <?= sectionText('Marcas')?>
-    <div class="row justify-content-center w-100 mb-5 ms-0 me-0">
-        <?= animal_card("Pedigree")?>
-        <?= animal_card("Whiskas")?>
-        <?= animal_card("PetClean")?>
-    </div>
-</div>
-
-<footer>
+<footer class="">
     <section style='background-color: #FFBF00;' class='d-flex w-100 row justify-content-evenly me-0 ms-0 align-items-start p-3'>
         <div class='col-auto mt-3'>
             <a class="text-decoration-none text-black" href=""><p class='fs-5 fw-bold'>Intitucional</p></a>

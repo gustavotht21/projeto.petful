@@ -1,7 +1,11 @@
 <?php
 
-function card($oldPrice, $price, $discount, $alternativePrice, $serviceName)
+require_once 'routes.php';
+
+function card($oldPrice, $price, $discount, $alternativePrice, $serviceName, $id, $type)
 {
+    $route = routes("comprar");
+    $product = base64_encode($id);
     return "
     <div class='col-auto mt-2'>
         <div class='shadow card border-1 border-light' style='width: 18rem; height: 28rem'>
@@ -14,7 +18,7 @@ function card($oldPrice, $price, $discount, $alternativePrice, $serviceName)
                 <p>$alternativePrice</p>
                 <p class='card-text fw-bold'>$serviceName</p>
                 <div class='d-flex justify-content-center w-100 h-100'>
-                    <a href='' class='btn rounded w-100 h-25 fw-bold f-4 d-flex justify-content-center align-items-center' style='background-color: #FFBF00'>Comprar</a>
+                    <a href='$route?product=$product&name=$serviceName&pt=$type' class='btn rounded w-100 h-25 fw-bold f-4 d-flex justify-content-center align-items-center' style='background-color: #FFBF00'>Comprar</a>
                 </div>
             </div>
         </div>
