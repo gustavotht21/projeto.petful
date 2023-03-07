@@ -14,6 +14,12 @@ function routes ($routeName)
             return 'http://localhost/login.php';
         case 'homeUser':
             return 'http://localhost/home.php';
+        case 'perfil':
+            return 'http://localhost/perfil.php';
+        case 'cart':
+            return 'http://localhost/cart.php';
+        case 'logout':
+            return 'http://localhost/src/php/action/logout.php';
         default:
             return "http://$routeName";
     }

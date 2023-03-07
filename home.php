@@ -1,5 +1,5 @@
 <?php
-require_once 'src/php/components/navbar.php';
+require_once 'src/php/components/navbarUser.php';
 require_once 'src/php/components/card.php';
 require_once 'src/php/components/animal_card.php';
 require_once 'src/php/components/sectionText.php';
@@ -35,7 +35,7 @@ if (! isset($_SESSION['user'])) {
     </style>
 </head>
 <body>
-<?php navbar();?>
+<?php navbarUser(5);?>
 <p class="mb-5 fw-bold fs-4 text-center mt-5 text-success">Bem-vindo(a) <?=$_SESSION['user']?></p>
 
 <div class="d-none d-xl-flex w-100 justify-content-center mt-5 mb-5 ms-0 me-0">
