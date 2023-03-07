@@ -76,7 +76,7 @@ if ($type === 'Product') {
             <?= $input?>
 
             <p class="text-decoration-line-through">R$ <?= $res['oldPrice']?></p>
-            <p class="fw-bold fs-5">R$ <?= $res['price']?></p>
+            <p class='fs-5 fw-bold'>R$ <?=$res['price']?> <span class='p-1 rounded text-white fw-bold ms-2' style='background-color: #10A19D'>-<?=$res['discount']?>%</span></p>
             <p><?= $res['alternativePrice']?></p>
             <div class="d-flex align-items-center gap-3">
                 <button type="submit" class='btn rounded fw-bold f-4 d-flex justify-content-center align-items-center' style='background-color: #FFBF00; width: 24rem; height: 4rem'>Comprar</button>
