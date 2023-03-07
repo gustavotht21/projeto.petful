@@ -12,6 +12,8 @@ function routes ($routeName)
             return 'http://localhost/cadastro.php';
         case 'login':
             return 'http://localhost/login.php';
+        case 'homeUser':
+            return 'http://localhost/home.php';
         default:
             return "http://$routeName";
     }

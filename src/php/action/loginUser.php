@@ -12,7 +12,13 @@ $sqlLogin = "SELECT * FROM User WHERE email='{$data['email']}' AND password='{$d
 $resultLogin = $connection->query($sqlLogin);
 
 if ($resultLogin->num_rows === 1) {
-    $route = routes('devborges.tech');
+    $resultLogin= $resultLogin->fetch_assoc();
+    session_start();
+    $_SESSION['idUser'] = $resultLogin['id'];
+    $_SESSION['user'] = $resultLogin['name'];
+    $_SESSION['email'] = $resultLogin['email'];
+
+    $route = routes('homeUser');
     header("Location: $route");
 } else {
     $route = routes('login');
