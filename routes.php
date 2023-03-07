@@ -12,7 +12,11 @@ function routes ($routeName)
             return 'b';
         case 'comprar':
             return 'http://localhost/comprar/';
+        case 'cadastro':
+            return 'http://localhost/cadastro.php';
+        case 'login':
+            return 'http://localhost/login.php';
         default:
-            return 'c';
+            return "http://$routeName";
     }
 }

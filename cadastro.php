@@ -1,8 +1,6 @@
 <?php
-require_once 'src/php/components/navbar.php';
-require_once 'src/php/components/card.php';
-require_once 'src/php/components/animal_card.php';
 require_once 'src/php/components/sectionText.php';
+require_once 'routes.php';
 require_once 'src/php/action/connection.php';
 $connection = connection();
 ?>
@@ -28,28 +26,42 @@ $connection = connection();
 </head>
 <body>
 
+<a class="btn ps-4 pe-4 fw-bold text-white mt-5 ms-3" style="background-color: #10A19D" href="<?=routes('home')?>">Voltar para a home</a>
+
 <?= sectionText('Cadastrar-se')?>
-<main class="container d-flex justify-content-center align-items-center gap-5 mt-5 mb-5 w-100">
-    <section class="d-flex justify-content-center align-items-center gap-5 mt-5 w-50 shadow">
-        <form action="#" class="m-5 d-flex flex-column w-100">
+<div class="container mt-5">
+    <p class="text-danger"><?php if (isset($_GET['error'])) echo $_GET['error']?></p>
+    <p class="text-success"><?php if (isset($_GET['message'])) echo $_GET['message']?></p>
+</div>
+<main class="container-xl d-flex justify-content-center align-items-center gap-3 mb-5 w-100">
+    <section class="w-100 w-md-100 d-flex justify-content-center align-items-center gap-5 shadow">
+        <form action="src/php/action/cadastrarUser.php" class="m-5 d-flex flex-column w-100" method="post">
             <div class='mb-3'>
-                <label for='qtd' class='form-label'>Nome</label>
-                <input value='1' type='number' name='qtd' min='1' class='form-control' id='qtd'>
+                <label for='name' class='form-label'>Nome</label>
+                <input type='text' name='name' class='form-control' id='name' required>
             </div>
             <div class='mb-3'>
-                <label for='qtd' class='form-label'>Email</label>
-                <input value='1' type='number' name='qtd' min='1' class='form-control' id='qtd'>
+                <label for='email' class='form-label'>Email</label>
+                <input type='email' name='email' class='form-control' id='email' required>
             </div>
             <div class='mb-3'>
-                <label for='qtd' class='form-label'>Senha</label>
-                <input value='1' type='number' name='qtd' min='1' class='form-control' id='qtd'>
+                <label for='password' class='form-label'>Senha</label>
+                <input type='password' name='password' class='form-control' id='password' required>
+            </div>
+            <div class='mb-3'>
+                <label for='confirmPassword' class='form-label'>Confirmar senha:</label>
+                <input type='password' name='confirmPassword' class='form-control' id='confirmPassword' required>
+            </div>
+            <div class="mb-3 d-flex gap-2">
+                <button type="submit" class="btn btn-warning fw-bold w-100">Cadastrar-se</button>
+                <a class="btn w-25 fw-bold text-white" style="background-color: #10A19D" href="<?=routes('login')?>">Login</a>
             </div>
         </form>
     </section>
-    <section style="background-color: #10A19D" class="d-flex justify-content-center align-items-center gap-5 mt-5 w-50 rounded">
-        <div class="m-5 d-flex flex-column w-100 justify-content-center">
-            <img class="mt-5" style="width: 6.25rem; height: 2rem" src='https://petful.devborges.tech/public_html/petful.svg' alt='logo'>
-            <p class="text-center text-white fw-semibold w-50 mt-3">Dolorem nullam vehicula sonet nibh altera. Aliquip suspendisse singulis expetendis appareat. Vel eloquentiam mandamus facilis nisi invidunt inani. Deterruisset quaeque mediocrem movet has saperet iudicabit hendrerit.</p>
+    <section style="background-color: #10A19D" class="d-none d-xl-flex justify-content-center align-items-center gap-5 w-100 rounded pt-5 pb-5">
+        <div class="d-flex flex-column justify-content-center align-items-center gap-5 w-100 p-5">
+            <img class="" style="width: 6.25rem; height: 2rem" src='https://petful.devborges.tech/public_html/petful.svg' alt='logo'>
+            <p class="text-center text-white fw-semibold w-50">Dolorem nullam vehicula sonet nibh altera. Aliquip suspendisse singulis expetendis appareat. Vel eloquentiam mandamus facilis nisi invidunt inani. Deterruisset quaeque mediocrem movet has saperet iudicabit hendrerit.</p>
         </div>
     </section>
 </main>
