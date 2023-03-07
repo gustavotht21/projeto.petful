@@ -6,12 +6,8 @@ function routes ($routeName)
     {
         case 'home':
             return 'http://localhost/';
-        case 'servicos':
-            return 'a';
-        case 'produtos':
-            return 'b';
         case 'comprar':
-            return 'http://localhost/comprar/';
+            return 'http://localhost/comprar.php';
         case 'cadastro':
             return 'http://localhost/cadastro.php';
         case 'login':
