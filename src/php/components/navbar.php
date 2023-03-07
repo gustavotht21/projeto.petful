@@ -3,6 +3,8 @@ require_once 'routes.php';
 function navbar()
 {
     $home = routes('home');
+    $cadastro = routes('cadastro');
+    $login = routes('login');
     echo "
     <nav class='navbar navbar-expand-lg' style='background-color: #FF7000'>
     <div class='container-fluid'>
@@ -37,6 +39,12 @@ function navbar()
                     </li>
                     <li class='nav-item'>
                         <a class='nav-link text-white fw-bold link' href='#marks'>Marcas</a>
+                    </li>
+                    <li class='nav-item rounded ps-1 pe-1' style='background-color: #FFBF00'>
+                        <a class='nav-link text-white fw-bold link' href='$login'>Login</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link text-white fw-bold link' href='$cadastro'>Cadastro</a>
                     </li>
                 </ul>
             </div>
