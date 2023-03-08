@@ -25,7 +25,7 @@ function navbarUser($cartItems)
                 </div>
             </div>
             <div class='offcanvas-body' style='background-color: #FF7000'>
-                <ul class='navbar-nav justify-content-end align-items-center flex-grow-1 pe-3'>
+                <ul class='navbar-nav justify-content-end gap-2 flex-grow-1 pe-3'>
                     <li class='nav-item'>
                         <a class='nav-link text-white fw-bold link' aria-current='page' href='$home'>Home</a>
                     </li>
@@ -41,19 +41,19 @@ function navbarUser($cartItems)
                     <li class='nav-item'>
                         <a class='nav-link text-white fw-bold link' href='#marks'>Marcas</a>
                     </li>
-                    <li class='nav-item rounded-4 ps-1 pe-1 me-2' style='background-color: #FFBF00'>
-                        <a class='nav-link link' href='$perfil'>
+                    <li class='nav-item rounded-4 ps-1 pe-1 me-2' style='background-color: #FFBF00; max-width: 6rem;'>
+                        <a class='nav-link link text-center' href='$perfil'>
                             <img style='width: 1.5rem; height: 1.5rem' src='https://petful.devborges.tech/public_html/user.svg' alt=''>
                         </a>
                     </li>
-                    <li class='nav-item rounded-4 ps-1 pe-1 me-2' style='background-color: #FFBF00'>
-                        <a class='nav-link link' href='$cart'>
+                    <li class='nav-item rounded-4 ps-1 pe-1 me-2' style='background-color: #FFBF00; max-width: 6rem;'>
+                        <a class='nav-link link text-center' href='$cart'>
                             <img style='width: 1.5rem; height: 1.5rem' src='https://petful.devborges.tech/public_html/cart.svg' alt=''>
                             <span class='ms-2 fw-bold text-white'>$cartItems</span>
                         </a>
                     </li>
-                    <li class='nav-item rounded-4 ps-1 pe-1 me-2' style='background-color: #FFBF00'>
-                        <a class='nav-link link' href='$logout'>
+                    <li class='nav-item rounded-4 ps-1 pe-1 me-2 flex align-items-center justify-content-center' style='background-color: #FFBF00; max-width: 6rem;'>
+                        <a class='nav-link link text-center' href='$logout'>
                             <img style='width: 1.5rem; height: 1.5rem' src='https://petful.devborges.tech/public_html/logout.svg' alt=''>
                         </a>
                     </li>
