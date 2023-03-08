@@ -2,7 +2,7 @@
 require_once 'routes.php';
 function navbarUser($cartItems)
 {
-    $home = routes('home');
+    $home = routes('homeUser');
     $cart = routes('cart');
     $perfil = routes('perfil');
     $logout = routes('logout');
