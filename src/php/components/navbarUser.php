@@ -1,11 +1,14 @@
 <?php
 require_once 'routes.php';
-function navbarUser($cartItems)
+function navbarUser()
 {
     $home = routes('homeUser');
     $cart = routes('cart');
     $perfil = routes('perfil');
     $logout = routes('logout');
+    session_start();
+    $idUser = base64_encode($_SESSION['idUser']);
+    $cartItems = $_SESSION['cart'];
     echo "
     <nav class='navbar navbar-expand-lg' style='background-color: #FF7000'>
     <div class='container-fluid'>
@@ -47,7 +50,7 @@ function navbarUser($cartItems)
                         </a>
                     </li>
                     <li class='nav-item rounded-4 ps-1 pe-1 me-2' style='background-color: #FFBF00; max-width: 6rem;'>
-                        <a class='nav-link link text-center' href='$cart'>
+                        <a class='nav-link link text-center' href='$cart?id=$idUser'>
                             <img style='width: 1.5rem; height: 1.5rem' src='https://petful.devborges.tech/public_html/cart.svg' alt=''>
                             <span class='ms-2 fw-bold text-white'>$cartItems</span>
                         </a>

@@ -17,7 +17,7 @@ function routes ($routeName)
         case 'perfil':
             return 'http://localhost/perfil.php';
         case 'cart':
-            return 'http://localhost/cart.php';
+            return 'http://localhost/carrinho.php';
         case 'logout':
             return 'http://localhost/src/php/action/logout.php';
         default:
