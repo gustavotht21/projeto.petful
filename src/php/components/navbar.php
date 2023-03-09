@@ -5,6 +5,7 @@ function navbar()
     $home = routes('home');
     $cadastro = routes('cadastro');
     $login = routes('login');
+    $contato = routes('contato');
     echo "
     <nav class='navbar navbar-expand-lg' style='background-color: #FF7000'>
     <div class='container-fluid'>
@@ -45,6 +46,9 @@ function navbar()
                     </li>
                     <li class='nav-item'>
                         <a class='nav-link text-white fw-bold link' href='$cadastro'>Cadastro</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link text-white fw-bold link' href='$contato'>Entre em Contato</a>
                     </li>
                 </ul>
             </div>

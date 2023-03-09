@@ -14,6 +14,8 @@ function routes ($routeName)
             return 'http://localhost/login.php';
         case 'homeUser':
             return 'http://localhost/home.php';
+        case 'contato':
+            return 'http://localhost/contato.php';
         default:
             return "http://$routeName";
     }
